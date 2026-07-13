@@ -1,6 +1,6 @@
 // Modern Personal Portfolio @jdomingu19
 // Taught by @pedrotech
-// src/layout/Navbar.jsx
+// src/components/Button.jsx
 
 export const Button = ({ className = "", size = "default", children }) => {
   const baseClasses =

@@ -17,7 +17,7 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-transparent py-5">
+    <header className="fixed top-0 left-0 right-0 bg-transparent py-5 z-50">
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <a
           href="#"
@@ -57,7 +57,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass-strong">
+        <div className="md:hidden glass-strong animate-fade-in">
           <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
             {navLinks.map((link, index) => (
               <a
