@@ -4,6 +4,7 @@
 
 import { Button } from "@/components/Button.jsx";
 import { ArrowRight, Download } from "lucide-react";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 
 export const Hero = () => {
@@ -74,6 +75,29 @@ export const Hero = () => {
                 <Download className="w-5 h-5" />
                 Download CV
               </AnimatedBorderButton>
+            </div>
+
+            {/* Social Media Links */}
+            <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+              <span className="text-sm text-muted-foreground">Follow: </span>
+              {[
+                { icon: FaGithub, href: "https://github.com/jdomingu19" },
+                {
+                  icon: FaLinkedin,
+                  href: "https://linkedin.com/in/jesus-dominguez-dev",
+                },
+                { icon: FaXTwitter, href: "https://x.com/jdomingu19" },
+              ].map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                >
+                  {<social.icon />}
+                </a>
+              ))}
             </div>
           </div>
           {/* Right Column - Profile Image */}

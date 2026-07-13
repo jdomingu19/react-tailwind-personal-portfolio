@@ -29,4 +29,8 @@ npm install tailwindcss @tailwindcss/vite
 npm install lucide-react
 ```
 
+```bash
+npm install react-icons
+```
+
 > Built with '\u{2665}' (♥) by Jesús Domínguez [@jdomingu19](https://github.com/jdomingu19/)
