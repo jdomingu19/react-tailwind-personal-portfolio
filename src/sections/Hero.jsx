@@ -4,7 +4,7 @@
 
 import { Button } from "@/components/Button.jsx";
 import { ArrowRight, Download } from "lucide-react";
-import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 
 export const Hero = () => {
@@ -79,14 +79,15 @@ export const Hero = () => {
 
             {/* Social Media Links */}
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
-              <span className="text-sm text-muted-foreground">Follow: </span>
+              <span className="text-sm text-muted-foreground">Follow me: </span>
               {[
                 { icon: FaGithub, href: "https://github.com/jdomingu19" },
+                { icon: FaInstagram, href: "https://instagram.com/jdomingu19" },
+                { icon: FaXTwitter, href: "https://x.com/jdomingu19" },
                 {
                   icon: FaLinkedin,
                   href: "https://linkedin.com/in/jesus-dominguez-dev",
                 },
-                { icon: FaXTwitter, href: "https://x.com/jdomingu19" },
               ].map((social, index) => (
                 <a
                   key={index}
@@ -95,12 +96,35 @@ export const Hero = () => {
                   rel="noopener noreferrer"
                   className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
                 >
-                  {<social.icon />}
+                  {<social.icon className="w-5 h-5" />}
                 </a>
               ))}
             </div>
           </div>
           {/* Right Column - Profile Image */}
+          <div className="relative animate-fade-in animation-delay-300">
+            {/* Profile Image */}
+            <div className="relative max-w-md mx-auto">
+              <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
+              <div className="relative glass rounded-3xl p-2 glow-border">
+                <img
+                  src="/profile-photo.jpg"
+                  alt="Jesús Domínguez"
+                  className="w-full aspect-4/5 object-cover rounded-2xl"
+                />
+
+                {/* Floating Badge */}
+                <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                    <span>Available for work</span>
+                  </div>
+                </div>
+
+                {/* Stats Badge */}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
