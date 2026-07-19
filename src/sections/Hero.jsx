@@ -3,9 +3,30 @@
 // src/sections/Hero.jsx
 
 import { Button } from "@/components/Button.jsx";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import { FaGithub, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+
+const skills = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Node.js",
+  "GraphQL",
+  "PostgreSQL",
+  "MongoDB",
+  "Redis",
+  "Docker",
+  "AWS",
+  "Vercel",
+  "Tailwind CSS",
+  "Prisma",
+  "Jest",
+  "Cypress",
+  "Figma",
+  "Git",
+  "GitHub Actions",
+];
 
 export const Hero = () => {
   return (
@@ -44,7 +65,7 @@ export const Hero = () => {
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Software Engineer • Full-Stack Developer
+                Software Engineer • Technical Leadership
               </span>
             </div>
 
@@ -122,10 +143,44 @@ export const Hero = () => {
                 </div>
 
                 {/* Stats Badge */}
+                <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
+                  <div className="text-2xl font-bold text-primary">5+</div>
+                  <div className="text-xs text-muted-foreground">
+                    Years Exp.
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Technical Skills Section */}
+        <div className="mt-20 animate-fade-in animation-delay-600">
+          <p className="text-sm text-muted-foreground mb-6 text-center">
+            Technologies I work with:
+          </p>
+          <div className="relative overflow-hidden">
+            <div className="flex animate-marquee">
+              {[...skills, ...skills].map((skill, index) => (
+                <div key={index} className="shrink-0 px-8 py-4">
+                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                    {skill}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800">
+        <a
+          href="#about"
+          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+        >
+          <span className="text-xs uppercase tracking-wider">Scroll</span>
+          <ChevronDown className="w-6 h-6 animate-bounce" />
+        </a>
       </div>
     </section>
   );
