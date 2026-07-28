@@ -4,6 +4,7 @@
 
 import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
+import { AnimatedBorderButton } from "@/components/AnimatedBorderButton.jsx";
 
 const projects = [
   {
@@ -101,8 +102,39 @@ export const Projects = () => {
                   </a>
                 </div>
               </div>
+
+              {/* Content */}
+              <div className="p-6 space-y-4">
+                <div className="flex items-start justify-between">
+                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <ArrowUpRight className="w-5 h-5 to-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:translate-y-1 transition-all" />
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           ))}
+        </div>
+
+        {/* View All CTA */}
+        <div className="text-center mt-12 animate-fade-in animation-delay-500">
+          <AnimatedBorderButton>
+            View All Projects
+            <ArrowUpRight className="w-5 h-5" />
+          </AnimatedBorderButton>
         </div>
       </div>
     </section>

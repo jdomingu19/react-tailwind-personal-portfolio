@@ -107,7 +107,7 @@ export const Hero = () => {
                 { icon: FaXTwitter, href: "https://x.com/jdomingu19" },
                 {
                   icon: FaLinkedin,
-                  href: "https://linkedin.com/in/jesus-dominguez-dev",
+                  href: "https://linkedin.com/in/jesus-dominguez-charris",
                 },
               ].map((social, index) => (
                 <a
