@@ -67,7 +67,56 @@ export const Experience = () => {
         </div>
 
         {/* Timeline */}
-        <div></div>
+        <div className="relative">
+          <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)]" />
+
+          {/* Experience Items */}
+          <div className="space-y-12">
+            {experiences.map((experience, index) => (
+              <div
+                key={index}
+                className="relative gird md:grid-cols-2 gap-8 animate-fade-in"
+                style={{ animationDelay: `${(index + 1) * 150}ms` }}
+              >
+                {/* Timeline Dot */}
+                <div className="absolute"></div>
+
+                {/* Content */}
+                <div
+                  className={`pl-8 md:pl-0 ${index % 2 === 0 ? "md:pr-16 md:text-right" : "md:col-start-2 md:pl-16"}`}
+                >
+                  <div className="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500">
+                    <span className="text-sm text-primary font-medium">
+                      {experience.period}
+                    </span>
+                    <h3 className="text-xl font-semibold mt-2">
+                      {experience.role}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {experience.company}
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-4">
+                      {experience.description}
+                    </p>
+
+                    <div
+                      className={`flex flex-wrap gap-2 mt-4 ${index % 2 === 0 ? "md:justify-end" : ""}`}
+                    >
+                      {experience.technologies.map((technology, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground"
+                        >
+                          {technology}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
