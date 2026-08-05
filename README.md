@@ -33,4 +33,8 @@ npm install lucide-react
 npm install react-icons
 ```
 
+```bash
+npm install @emailjs/browser
+```
+
 > Built with '\u{2665}' (♥) by Jesús Domínguez [@jdomingu19](https://github.com/jdomingu19/)
